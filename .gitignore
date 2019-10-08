@@ -1,0 +1,7 @@
+api/media
+api/db.sqlite3
+
+# Tuture-related files
+
+.tuture
+tuture-error.log
