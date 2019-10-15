@@ -19,39 +19,6 @@
 <script>
 import RecipeCard from "~/components/RecipeCard.vue";
 
-const sampleData = [
-  {
-    id: 1,
-    name: "通心粉",
-    picture: "/images/food-1.jpeg",
-    ingredients: "牛肉, 猪肉, 羊肉",
-    difficulty: "easy",
-    prep_time: 15,
-    prep_guide:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, porro. Dignissimos ducimus ratione totam fugit officiis blanditiis exercitationem, nisi vero architecto quibusdam impedit, earum "
-  },
-  {
-    id: 2,
-    name: "羊肉串",
-    picture: "/images/food-2.jpeg",
-    ingredients: "牛肉, 猪肉, 羊肉",
-    difficulty: "easy",
-    prep_time: 15,
-    prep_guide:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, porro. Dignissimos ducimus ratione totam fugit officiis blanditiis exercitationem, nisi vero architecto quibusdam impedit, earum "
-  },
-  {
-    id: 3,
-    name: "炒饭",
-    picture: "/images/banner.jpg",
-    ingredients: "牛肉, 猪肉, 羊肉",
-    difficulty: "easy",
-    prep_time: 15,
-    prep_guide:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, porro. Dignissimos ducimus ratione totam fugit officiis blanditiis exercitationem, nisi vero architecto quibusdam impedit, earum "
-  }
-];
-
 export default {
   head() {
     return {
@@ -61,11 +28,13 @@ export default {
   components: {
     RecipeCard
   },
-  asyncData(context) {
-    let data = sampleData;
-    return {
-      recipes: data
-    };
+  async asyncData({ $axios, params }) {
+    try {
+      let recipes = await $axios.$get(`/recipes/`);
+      return { recipes };
+    } catch (e) {
+      return { recipes: [] };
+    }
   },
   data() {
     return {
@@ -73,8 +42,16 @@ export default {
     };
   },
   methods: {
-    deleteRecipe(recipe_id) {
-      console.log(deleted`${recipe.id}`);
+    async deleteRecipe(recipe_id) {
+      try {
+        if (confirm('确认要删除吗？')) {
+          await this.$axios.$delete(`/recipes/${recipe_id}/`);
+          let newRecipes = await this.$axios.$get("/recipes/");
+          this.recipes = newRecipes;
+        }
+      } catch (e) {
+        console.log(e);
+      }
     }
   }
 };
