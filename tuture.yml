@@ -76,3 +76,55 @@ steps:
       - file: api/core/urls.py
         display: true
       - file: tuture.yml
+  - name: 用 Nuxt.js 实现网站首页
+    commit: 596203d
+    diff:
+      - file: client/.editorconfig
+        display: true
+      - file: client/.gitignore
+        display: true
+      - file: client/README.md
+        display: true
+      - file: client/assets/README.md
+        display: true
+      - file: client/components/Logo.vue
+        display: true
+      - file: client/components/README.md
+        display: true
+      - file: client/layouts/README.md
+        display: true
+      - file: client/layouts/default.vue
+        display: true
+      - file: client/middleware/README.md
+        display: true
+      - file: client/nuxt.config.js
+        display: true
+      - file: client/package.json
+        display: true
+      - file: client/pages/README.md
+        display: true
+      - file: client/pages/index.vue
+        display: true
+      - file: client/pages/recipes/_id/edit.vue
+        display: true
+      - file: client/pages/recipes/_id/index.vue
+        display: true
+      - file: client/pages/recipes/add.vue
+        display: true
+      - file: client/pages/recipes/index.vue
+        display: true
+      - file: client/plugins/README.md
+        display: true
+      - file: client/static/README.md
+        display: true
+      - file: client/static/favicon.ico
+        display: true
+      - file: client/static/icon.png
+        display: true
+      - file: client/static/images/banner.jpg
+        display: true
+      - file: client/store/README.md
+        display: true
+      - file: client/yarn.lock
+        display: true
+      - file: tuture.yml
