@@ -128,3 +128,35 @@ steps:
       - file: client/yarn.lock
         display: true
       - file: tuture.yml
+  - name: 数据展示：实现食谱列表
+    commit: 63f7ab0
+    diff:
+      - file: client/components/RecipeCard.vue
+        display: true
+      - file: client/pages/recipes/index.vue
+        display: true
+      - file: client/static/images/food-1.jpeg
+        display: true
+      - file: client/static/images/food-2.jpeg
+        display: true
+      - file: tuture.yml
+  - name: 从服务器获取数据
+    commit: 60a60d7
+    diff:
+      - file: api/api/urls.py
+        display: true
+      - file: client/nuxt.config.js
+        display: true
+      - file: client/pages/recipes/_id/index.vue
+        display: true
+      - file: client/pages/recipes/index.vue
+        display: true
+  - name: 实现食谱的添加和删除
+    commit: 5f1edd9
+    diff:
+      - file: client/pages/recipes/_id/edit.vue
+        display: true
+      - file: client/pages/recipes/add.vue
+        display: true
+      - file: client/static/images/placeholder.png
+        display: true
