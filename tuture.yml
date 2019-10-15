@@ -7,26 +7,72 @@ steps:
       - file: Pipfile
         display: true
       - file: api/api/__init__.py
-        display: true
+        display: false
+      - file: api/api/settings.py
+        display: false
+      - file: api/api/urls.py
+        display: false
+      - file: api/api/wsgi.py
+        display: false
+      - file: api/core/__init__.py
+        display: false
+      - file: api/core/admin.py
+        display: false
+      - file: api/core/apps.py
+        display: false
+      - file: api/core/migrations/__init__.py
+        display: false
+      - file: api/core/models.py
+        display: false
+      - file: api/core/tests.py
+        display: false
+      - file: api/core/views.py
+        display: false
+      - file: api/manage.py
+        display: false
+    explain:
+      post: |-
+        此时项目结构如下所示：
+
+        ```text
+        api
+        ├── api
+        │   ├── __init__.py
+        │   ├── settings.py
+        │   ├── urls.py
+        │   └── wsgi.py
+        ├── core
+        │   ├── __init__.py
+        │   ├── admin.py
+        │   ├── apps.py
+        │   ├── migrations
+        │   │   └── __init__.py
+        │   ├── models.py
+        │   ├── tests.py
+        │   ├── urls.py
+        │   └── views.py
+        └── manage.py
+        ```
+  - name: 用 Django 实现 REST API
+    commit: d4d056f
+    diff:
+      - file: .editorconfig
+        display: false
+      - file: .gitignore
       - file: api/api/settings.py
         display: true
       - file: api/api/urls.py
         display: true
-      - file: api/api/wsgi.py
-        display: true
-      - file: api/core/__init__.py
-        display: true
       - file: api/core/admin.py
         display: true
-      - file: api/core/apps.py
-        display: true
-      - file: api/core/migrations/__init__.py
-        display: true
+      - file: api/core/migrations/0001_initial.py
+        display: false
       - file: api/core/models.py
         display: true
-      - file: api/core/tests.py
+      - file: api/core/serializers.py
         display: true
       - file: api/core/views.py
         display: true
-      - file: api/manage.py
+      - file: api/core/urls.py
         display: true
+      - file: tuture.yml
