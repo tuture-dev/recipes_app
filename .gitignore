@@ -1,5 +1,6 @@
 api/media
 api/db.sqlite3
+*.pyc
 
 # Tuture-related files
 
