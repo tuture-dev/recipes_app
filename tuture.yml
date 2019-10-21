@@ -371,7 +371,7 @@ steps:
 
 
         真是让人食欲大开！
-      pre: >+
+      pre: >-
         服务器实现完毕之后，就轮到 Nuxt 登场了。我们将把所有的前端代码放到 client 目录中，不过无需自己创建，我们调用 nuxt
         的脚手架来创建前端应用：
 
@@ -408,6 +408,9 @@ steps:
 
         - store：存放 Vuex Store 文件（本教程中不需要）
 
+
+        本项目所用到的图片资源请访问我的 [GitHub
+        仓库](https://github.com/mRcfps/recipes_app/tree/master/client/static/images)，并下载到对应的目录中。
   - name: 数据展示：实现食谱列表
     commit: 63f7ab0
     diff:
