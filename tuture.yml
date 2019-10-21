@@ -430,7 +430,10 @@ steps:
       - file: tuture.yml
     explain:
       pre: 接下来我们将演示如何展示数据，并实现食谱列表页面。
-      post: 打开前端网站，可以看到我们刚才实现的食谱列表页面：
+      post: |-
+        打开前端网站，可以看到我们刚才实现的食谱列表页面：
+
+        ![](./tuture-assets/recipe-list-fake.jpg)
   - name: 从服务器获取数据
     commit: 60a60d7
     diff:
@@ -474,7 +477,7 @@ steps:
         再运行前端页面，可以看到我们刚刚在 Django 后台管理中添加的项目：
 
 
-        ![]()
+        ![](./tuture-assets/recipe-list.jpg)
   - name: 实现食谱的详情和添加页面
     commit: 5f1edd9
     diff:
@@ -484,11 +487,14 @@ steps:
           post: |-
             实现之后的页面如下：
 
-            ![]()
+            ![](./tuture-assets/recipe-detail.jpg)
       - file: client/pages/recipes/add.vue
         display: true
         explain:
-          post: 实现的页面如下：
+          post: |-
+            实现的页面如下：
+
+            ![](./tuture-assets/add-recipe.jpg)
       - file: client/static/images/placeholder.png
         display: false
     explain:
