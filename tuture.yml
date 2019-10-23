@@ -1,6 +1,8 @@
 name: Django + Nuxt 实现美食分享网站
 id: b9b4d831629e9a7df36131b1661569eb
 github: 'https://github.com/mRcfps/recipes_app'
+created: 2019-10-18T00:00:00.509Z
+updated: 2019-10-23T02:52:55.509Z
 topics:
   - Django
   - Vue
