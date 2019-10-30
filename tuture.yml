@@ -113,7 +113,7 @@ steps:
         出现以下所示的欢迎界面（Django 2.2版本）：
 
 
-        ![](./tuture-assets/django-welcome.jpg)
+        ![](tuture-assets/django-welcome.jpg)
 
 
         即便现在没有写任何代码，Django 已经悄悄为我们带来了很多酷炫的功能，特别是自带的后台管理系统。首先关闭刚才打开的服务器（Ctrl +
@@ -148,7 +148,7 @@ steps:
         [http://localhost:8000/admin](http://localhost:8000/admin)，可以看到后台管理的登录页面。输入刚才创建的超级用户的用户名和密码，就进入了后台管理系统，如下所示：
 
 
-        ![](./tuture-assets/django-admin.png)
+        ![](tuture-assets/django-admin.png)
 
 
         看上去很简洁专业，但是——没什么东西，而且全是英文！别担心，后面我们会一个个搞定。
@@ -369,7 +369,7 @@ steps:
         dev`运行我们的前端页面（***记得在 client 子目录下运行！***），可以看到：
 
 
-        ![](./tuture-assets/index-page.jpg)
+        ![](tuture-assets/index-page.jpg)
 
 
         真是让人食欲大开！
@@ -388,7 +388,7 @@ steps:
         之后脚手架应用会询问一系列问题，按下面的截图进行选择（当然作者名填自己）：
 
 
-        ![](./tuture-assets/create-nuxt-app.jpg)
+        ![](tuture-assets/create-nuxt-app.jpg)
 
 
         我们对 Nuxt 脚手架生成的目录结构稍作讲解。可以看到 client 目录下有以下子目录：
@@ -438,7 +438,7 @@ steps:
       post: |-
         打开前端网站，可以看到我们刚才实现的食谱列表页面：
 
-        ![](./tuture-assets/recipe-list-fake.jpg)
+        ![](tuture-assets/recipe-list-fake.jpg)
   - name: 从服务器获取数据
     commit: 60a60d7
     diff:
@@ -476,13 +476,13 @@ steps:
         打开服务器，然后进入后台管理页面（[http://localhost:8000/admin](http://localhost:8000/admin)），添加一些数据：
 
 
-        ![](./tuture-assets/add-data-in-admin.jpg)
+        ![](tuture-assets/add-data-in-admin.jpg)
 
 
         再运行前端页面，可以看到我们刚刚在 Django 后台管理中添加的项目：
 
 
-        ![](./tuture-assets/recipe-list.jpg)
+        ![](tuture-assets/recipe-list.jpg)
   - name: 实现食谱的详情和添加页面
     commit: 5f1edd9
     diff:
@@ -492,14 +492,14 @@ steps:
           post: |-
             实现之后的页面如下：
 
-            ![](./tuture-assets/recipe-detail.jpg)
+            ![](tuture-assets/recipe-detail.jpg)
       - file: client/pages/recipes/add.vue
         display: true
         explain:
           post: |-
             实现的页面如下：
 
-            ![](./tuture-assets/add-recipe.jpg)
+            ![](tuture-assets/add-recipe.jpg)
       - file: client/static/images/placeholder.png
         display: false
     explain:
