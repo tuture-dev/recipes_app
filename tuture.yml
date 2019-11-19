@@ -4,9 +4,9 @@ github: 'https://github.com/mRcfps/recipes_app'
 created: 2019-10-18T00:00:00.509Z
 updated: 2019-10-23T02:52:55.509Z
 topics:
-  - Python
   - Django
   - Vue
+  - Nuxt
 categories:
   - 后端
   - Python
