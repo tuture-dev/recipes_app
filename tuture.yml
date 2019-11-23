@@ -1,8 +1,8 @@
 name: Django + Nuxt 实现美食分享网站
 id: b9b4d831629e9a7df36131b1661569eb
 github: 'https://github.com/mRcfps/recipes_app'
-created: 2019-10-18T00:00:00.509Z
-updated: 2019-10-23T02:52:55.509Z
+created: '2019-10-18T00:00:00.509Z'
+updated: 2019-11-23T08:21:30.819Z
 topics:
   - Django
   - Vue
@@ -11,6 +11,20 @@ categories:
   - 后端
   - Python
   - 进阶
+splits:
+  - name: Django + Nuxt 实现美食分享网站（一）
+    description: >-
+      Django 作为 Python 社区最受欢迎的 Web 框架之一，凭借其高度抽象的组件和强大方便的脚手架，将快速且流畅的开发体验演绎到了极致。而
+      Nuxt 作为从 Vue.js 进化而来的前端框架，能够轻松胜任复杂的 SPA（单页应用）开发。两者相遇，能够擦出怎样的火花？这篇教程将用
+      Django + Nuxt 实现带有完整的增删改查（CRUD）功能的全栈应用。最后郑重警告：不要在深夜阅读此教程！！！
+    start: c64b3b6
+    end: 63f7ab0
+  - name: Django + Nuxt 实现美食分享网站（二）
+    description: >-
+      在本教程的上一部分中，我们分别用 Django 和 Nuxt
+      实现了后端和前端的雏形。在这一部分，我们将实现前后端之间的通信，使得前端可以从后端获取数据，并且将进一步丰富网站的功能。
+    start: 60a60d7
+    end: 04edf4c
 steps:
   - name: 项目初始化
     commit: c64b3b6
@@ -59,53 +73,19 @@ steps:
         ```
 
 
-        此时项目结构如下所示：
+        接着进行数据库迁移，并创建用于登录后台管理的超级用户：
 
 
-        ```text
+        ```bash
 
-        api
+        (recipes_app-nV3wuGJ1) $ python manage.py migrate
 
-        ├── api                      // 项目全局文件目录
-
-        │   ├── __init__.py
-
-        │   ├── settings.py          // 全局配置
-
-        │   ├── urls.py              // 全局路由
-
-        │   └── wsgi.py              // WSGI 服务
-
-        ├── core                     // core 应用目录
-
-        │   ├── __init__.py
-
-        │   ├── admin.py             // 后台管理配置
-
-        │   ├── apps.py
-
-        │   ├── migrations           // 数据库迁移文件目录
-
-        │   │   └── __init__.py
-
-        │   ├── models.py            // 数据模型
-
-        │   ├── tests.py             // 单元测试
-
-        │   ├── urls.py              // 应用路由
-
-        │   └── views.py             // 视图
-
-        └── manage.py                // 项目管理脚本
+        (recipes_app-nV3wuGJ1) $ python manage.py createsuperuser
 
         ```
 
 
-        Django
-        的默认项目布局如上所示，由一个***全局项目目录***（和项目名称同名，用于存放全局文件）、多个***子应用目录***（每个应用包括数据模型、视图等一整套模块）和一个***项目管理脚本***组成。项目管理脚本的功能包括运行服务器、单元测试、数据库迁移等等。
-
-
-        让我们运行 Django 服务器，确保一切正常：
+        按照问题输入信息即可。要记住用户名和密码哦！然后运行开发服务器：
 
 
         ```bash
@@ -115,49 +95,54 @@ steps:
         ```
 
 
-        出现以下所示的欢迎界面（Django 2.2版本）：
-
-
-        ![](tuture-assets/django-welcome.jpg)
-
-
-        即便现在没有写任何代码，Django 已经悄悄为我们带来了很多酷炫的功能，特别是自带的后台管理系统。首先关闭刚才打开的服务器（Ctrl +
-        C），然后进行数据库迁移：
-
-
-        ```bash
-
-        (recipes_app-nV3wuGJ1) $ python manage.py migrate
-
-        ```
-
-
-        在这里先简单描述一下数据库迁移（Database Migration）的作用：根据定义好的数据模型，在数据库中创建相应的表格（即 SQL 中的
-        `CREATE TABLE ...` 命令）。Django 自身已经定义好了用户、会话等模型，因此需要先进行数据库迁移，在数据库中建表。
-
-
-        数据库迁移完成后，就可以创建用于登录后台管理的超级用户：
-
-
-        ```
-
-        (recipes_app-nV3wuGJ1) $ python manage.py createsuperuser
-
-        ```
-
-
-        按照问题输入信息即可。要记住用户名和密码哦！
-
-
-        再次打开服务器，访问
+        访问
         [http://localhost:8000/admin](http://localhost:8000/admin)，可以看到后台管理的登录页面。输入刚才创建的超级用户的用户名和密码，就进入了后台管理系统，如下所示：
 
 
         ![](tuture-assets/django-admin.png)
 
 
-        看上去很简洁专业，但是——没什么东西，而且全是英文！别担心，后面我们会一个个搞定。
+        熟悉的界面，但是——没什么东西，而且全是英文！别担心，后面我们会一个个搞定。
       pre: >-
+        在这一系列教程中，我们将会实现一个全栈美食分享网站，后端用 Django 实现，前端则是 Nuxt 框架，下面是最终完成后的项目效果：
+
+
+        ![](tuture-assets/demo.gif)
+
+
+        ### 预备知识
+
+
+        本教程假定你已经知道了
+
+
+        - 基本的 Python 3 语言知识，包括使用 pip 安装包
+
+        - Django 框架的基础概念（MTV
+        架构），可参考这篇[快速入门教程](https://tuture.co/2019/11/19/55d393c/)进行学习
+
+        - Vue 的基础概念，以及用 npm
+        工具链的使用，可参考[这篇教程](https://tuture.co/2019/10/17/0b662ce/)
+
+        - 前后端分离的基本概念，包括前端如何通过发起 HTTP(S) 请求从后端获取数据
+
+
+        ### 学习目标
+
+
+        学完这篇教程后，你将：
+
+
+        - 了解用 pipenv 工具管理 Python 依赖
+
+        - 学会用 Django REST Framework 快速开发 REST API
+
+        - 学会用 Nuxt 框架快速开发 SPA（单页应用），能够从后端获取数据并渲染
+
+
+        ### 用 pipenv 初始化 Python 环境
+
+
         首先创建项目目录，并进入：
 
 
@@ -189,7 +174,7 @@ steps:
 
         - **Django**: Django 框架本身，提供了丰富且强大的服务器开发组件；
 
-        - **Django Rest Framework**：Django 框架的超级搭档，大大方便了 REST API 的开发；
+        - **DRF (Django Rest Framework)**：Django 框架的超级搭档，大大方便了 REST API 的开发；
 
         - **Django CORS Headers**：用于实现跨域资源请求（CORS）的 Django 中间件（如果你不了解
         CORS，可以参考阮一峰的[日志](http://www.ruanyifeng.com/blog/2016/04/cors.html)）。
@@ -214,7 +199,10 @@ steps:
         display: true
         explain:
           pre: >-
-            首先，在项目级目录的全局配置文件 settings.py 中做如下改动：
+            ### 全局配置
+
+
+            首先，在全局配置文件 settings.py 中做如下改动：
 
 
             1. 在 `INSTALLED_APPS` 中添加 `rest_framework`、`corsheaders` 和
@@ -237,6 +225,9 @@ steps:
         display: true
         explain:
           pre: >-
+            ### 实现 core 应用
+
+
             接下来就是实现 `core` 这个 Django 应用。实现一个 Django 应用大致都是按照这样的流程：
 
 
@@ -247,8 +238,7 @@ steps:
             3. 定义序列化器（serializers.py），*仅当实现 REST API 时需要*，用于提供数据模型的 JSON
             序列化（或其他数据交换格式）；
 
-            4. 定义视图（views.py），用于实现具体的业务逻辑（也许你在第一步就已经开始困惑了，View 不应该代表用户界面吗？实际上，在
-            Django 框架中，View 的作用相当于 MVC 框架中的 Controller）；
+            4. 定义视图（views.py），用于实现具体的业务逻辑；
 
             5. 定义路由（urls.py），用于定义路由规则，将其映射到相应的视图；
 
@@ -311,6 +301,35 @@ steps:
 
 
         “为赶时间的完美主义者而生！”
+      post: >-
+        没错，关于食谱的增删改查的 API 我们全都实现了！不信？先运行开发服务器：
+
+
+        ```bash
+
+        (recipes_app-nV3wuGJ1) $ python manage.py runserver
+
+        ```
+
+
+        由于 Django REST Framework 为我们提供了测试 API 的 Web 界面，因此这里就不用 Postman
+        等工具进行测试了。用浏览器访问
+        [localhost:8000/api/recipes](localhost:8000/api/recipes)，就进入了如下所示的 API
+        测试页面：
+
+
+        ![](tuture-assets/image.png)
+
+
+        这个页面的下方还有添加数据（发起 POST 请求）的表单，我们填一些数据，然后点击 POST 按钮：
+
+
+        ![](tuture-assets/image-f3d22507493bf44a.png)
+
+
+        然后再次访问食谱列表页面，就有我们刚刚添加的食谱了！此外，你还可以尝试访问单个食谱的详情页面（例如
+        [localhost:8000/api/recipes/1](localhost:8000/api/recipes/1)），并且可以通过 Web
+        页面直接修改或删除哦！
   - name: 用 Nuxt.js 实现网站首页
     commit: 596203d
     diff:
@@ -341,10 +360,11 @@ steps:
       - file: client/pages/index.vue
         display: true
         explain:
-          pre: 我们在 client/pages 中创建 index.vue 文件，并在其中实现我们的前端首页：
-          post: >-
-            模板（Template）+ 脚本（Script）+ 样式（Style），经典的 Vue.js 组件。如果对 Vue.js
-            还不熟悉的话，建议学习巍哥的 Vue 入门系列教材。
+          pre: |-
+            ### 编写前端首页
+
+            我们在 client/pages 中创建 index.vue 文件，并在其中实现我们的前端首页：
+          post: 模板（Template）+ 脚本（Script）+ 样式（Style），经典的 Vue.js 组件。
       - file: client/pages/recipes/_id/edit.vue
         display: false
       - file: client/pages/recipes/_id/index.vue
@@ -379,8 +399,14 @@ steps:
 
         真是让人食欲大开！
       pre: >-
-        服务器实现完毕之后，就轮到 Nuxt 登场了。我们将把所有的前端代码放到 client 目录中，不过无需自己创建，我们调用 nuxt
-        的脚手架来创建前端应用：
+        Django 的 MTV 架构固然优秀，但是随着现在的业务逻辑越来越多地向前端倾斜（也就是现在流行的**富前端应用**），其中的
+        T（Template）需要更强大的武器来解决，这里就是我们的第二位主角 Nuxt。
+
+
+        ### 用脚手架初始化 Nuxt 项目
+
+
+        我们将把所有的前端代码放到 client 目录中，不过无需自己创建，我们调用 nuxt 的脚手架来创建前端应用：
 
 
         ```bash
@@ -424,14 +450,17 @@ steps:
       - file: client/components/RecipeCard.vue
         display: true
         explain:
-          pre: 首先，实现将会在多个页面中反复使用的食谱卡片组件 `RecipeCard` 如下：
+          pre: |-
+            ### 实现 RecipeCard 组件
+
+            首先，实现将会在多个页面中反复使用的食谱卡片组件 `RecipeCard` 如下：
           post: >-
             在这个组件中，我们定义了两个 `props`，分别是 `recipe`（代表食谱对象）和
             `onDelete`（删除时的回调函数），并在模板中使用这两个成员。
       - file: client/pages/recipes/index.vue
         display: true
         explain:
-          pre: "接下来我们将深入体验 Nuxt 的路由功能——通过 pages 目录下的文档结构，就可以自动生成 vue-router 的路由器配置！\n\n例如我们这样安排 pages 下面的目录结构\U0001F447：\n\n```\npages\n├── README.md\n├── index.vue\n└── recipes\n    ├── _id\n    │   ├── edit.vue\n    │   └── index.vue\n    ├── add.vue\n    └── index.vue\n```\n\n`_id` 目录（或者其他以单下划线开头的目录或 .vue 文件）被称作是**动态路由**（Dynamic Routing），可以接受参数作为 URL 的一部分。上面的 pages 目录自动生成下面的 `router`：\n\n```js\nrouter: {\n  routes: [\n    {\n      name: 'index',\n      path: '/',\n      component: 'pages/index.vue'\n    },\n    {\n      name: 'recipes',\n      path: '/recipes',\n      component: 'pages/recipes/index.vue'\n    },\n    {\n      name: 'recipes-add',\n      path: '/recipes/add',\n      component: 'pages/recipes/add.vue'\n    },\n    {\n      name: 'recipes-id',\n      path: '/recipes/:id?',\n      component: 'pages/recipes/_id/index.vue'\n    },\n    {\n      name: 'recipes-id-edit',\n      path: '/recipes/:id?/edit',\n      component: 'pages/recipes/_id/edit.vue'\n    }\n  ]\n}\n```\n\n如果想要更深入地了解 Nuxt 的路由功能，请参考[官方文档](https://nuxtjs.org/guide/routing)。\n\n创建食谱列表页面 pages/recipes/index.vue（先使用假数据填充），代码如下："
+          pre: "### 了解 Nuxt 的路由功能\n\n在实现第二个页面之前，我们有必要先了解一下 Nuxt 的路由功能——通过 pages 目录下的文档结构，就可以自动生成 vue-router 的路由器配置！\n\n例如我们这样安排 pages 下面的目录结构\U0001F447：\n\n```text\npages\n├── README.md\n├── index.vue\n└── recipes\n    ├── _id\n    │   ├── edit.vue\n    │   └── index.vue\n    ├── add.vue\n    └── index.vue\n```\n\n`_id` 目录（或者其他以单下划线开头的目录或 .vue 文件）被称作是**动态路由**（Dynamic Routing），可以接受参数作为 URL 的一部分。上面的 pages 目录自动生成下面的 `router`：\n\n```js\nrouter: {\n  routes: [\n    {\n      name: 'index',\n      path: '/',\n      component: 'pages/index.vue'\n    },\n    {\n      name: 'recipes',\n      path: '/recipes',\n      component: 'pages/recipes/index.vue'\n    },\n    {\n      name: 'recipes-add',\n      path: '/recipes/add',\n      component: 'pages/recipes/add.vue'\n    },\n    {\n      name: 'recipes-id',\n      path: '/recipes/:id?',\n      component: 'pages/recipes/_id/index.vue'\n    },\n    {\n      name: 'recipes-id-edit',\n      path: '/recipes/:id?/edit',\n      component: 'pages/recipes/_id/edit.vue'\n    }\n  ]\n}\n```\n\n如果想要更深入地了解 Nuxt 的路由功能，请参考[官方文档](https://nuxtjs.org/guide/routing)。\n\n### 实现食谱列表页面\n\n创建食谱列表页面 pages/recipes/index.vue（先使用假数据填充），代码如下："
           post: ''
       - file: client/static/images/food-1.jpeg
         display: false
@@ -440,17 +469,24 @@ steps:
       - file: tuture.yml
     explain:
       pre: 接下来我们将演示如何展示数据，并实现食谱列表页面。
-      post: |-
+      post: >-
         打开前端网站，可以看到我们刚才实现的食谱列表页面：
 
+
         ![](tuture-assets/recipe-list-fake.jpg)
+
+
+        到这儿，我们分别实现了这个全栈食谱网站的前端和后端应用，这篇教程的第一部分也就结束了。在接下来的教程中，我们将实现前后端之间的通信，并进一步实现食谱的详情及添加页面，不见不散！
   - name: 从服务器获取数据
     commit: 60a60d7
     diff:
       - file: api/api/urls.py
         display: true
         explain:
-          pre: 首先我们要配置一下 Django 服务器，使前端能够访问其静态文件。调整 api/api/urls 文件如下：
+          pre: |-
+            ### 配置 Django 的静态文件服务
+
+            首先我们要配置一下 Django 服务器，使前端能够访问其静态文件。调整 api/api/urls.py 文件如下：
           post: >-
             需要注意的是，这样配置静态文件路由仅应当在开发环境下使用。在生产环境下（settings.py 中的 `DEBUG` 设为
             `False` 时），静态文件路由将自动生效（因为 Django 并不适合作为静态文件服务器，应该选用类似 Nginx
@@ -459,6 +495,9 @@ steps:
         display: true
         explain:
           pre: >-
+            ### 实现前端的数据请求功能
+
+
             在客户端，我们先要对 Nuxt 进行全局配置。Nuxt 包括
             [axios](https://github.com/axios/axios) 包，这是一个非常出色的基于 Promise 的 HTTP
             请求库。在 nuxt.config.js 中的 `axios` 一项中添加 Django 服务器的 URL：
@@ -472,9 +511,12 @@ steps:
       - file: client/pages/recipes/_id/index.vue
         display: true
         explain:
-          pre: 我们进一步实现食谱详情页面。在 pages/recipes 目录中创建 _id 目录，在其中添加 index.vue 文件，代码如下：
+          pre: |-
+            ### 实现食谱详情页面
+
+            我们进一步实现食谱详情页面。在 pages/recipes 目录中创建 _id 目录，在其中添加 index.vue 文件，代码如下：
     explain:
-      pre: 在这一步中，我们将打通前后端——前端将从后端获取数据。
+      pre: 在这一部分，我们将真正实现一个全栈应用——让前端能够向后端发起请求，从而获取想要的数据。
       post: >-
         为了测试前端页面能否真正从后端获取数据，我们先要在后端数据库中添加一些数据，而这对 Django 来说就非常方便了。进入 api 目录，运行
         `python manage.py runserver`
@@ -488,7 +530,7 @@ steps:
 
 
         ![](tuture-assets/recipe-list.jpg)
-  - name: 实现食谱的详情和添加页面
+  - name: 实现食谱的编辑和创建页面
     commit: 5f1edd9
     diff:
       - file: client/pages/recipes/_id/edit.vue
@@ -510,7 +552,7 @@ steps:
     explain:
       pre: >-
         有了前面的铺垫，实现食谱的添加和删除也基本上是按部就班了。我们在 pages/recipes/_id 中分别实现
-        `edit.vue`（食谱详情页面） 和 `add.vue` （创建食谱页面）如下。
+        `edit.vue`（食谱编辑页面） 和 `add.vue` （创建食谱页面）如下。
   - name: 一点强迫症：全局页面跳转效果
     commit: 04edf4c
     diff:
@@ -525,8 +567,8 @@ steps:
       - file: tuture.yml
     explain:
       pre: 在这一节中，我们将演示如何在 Nuxt 中添加全局样式文件，来实现前端页面之间的跳转效果。
-      post: 至此，一个具有完整增删改查功能、实现了的前后端分离的食谱网站就完成了！
+      post: 欧耶，一个具有完整增删改查功能、实现了前后端分离的美食分享网站就完成了！
 description: >-
   Django 作为 Python 社区最受欢迎的 Web 框架之一，凭借其高度抽象的组件和强大方便的脚手架，将快速且流畅的开发体验演绎到了极致。而 Nuxt
   作为从 Vue.js 进化而来的前端框架，能够轻松胜任复杂的 SPA（单页应用）开发。两者相遇，能够擦出怎样的火花？这篇教程将用 Django + Nuxt
-  实现带有完整的增删改查（CRUD）功能的前后端应用。最后郑重警告：不要在深夜阅读此教程！！！
+  实现带有完整的增删改查（CRUD）功能的全栈应用。最后郑重警告：不要在深夜阅读此教程！！！
