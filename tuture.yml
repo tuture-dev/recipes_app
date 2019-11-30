@@ -2,7 +2,7 @@ name: Django + Nuxt 实现美食分享网站
 id: b9b4d831629e9a7df36131b1661569eb
 github: 'https://github.com/mRcfps/recipes_app'
 created: '2019-10-18T00:00:00.509Z'
-updated: 2019-11-23T08:21:30.819Z
+updated: 2019-11-30T11:10:14.466Z
 topics:
   - Django
   - Vue
@@ -283,7 +283,12 @@ steps:
             - `/recipes/`：创建食谱（POST 方法）或读取食谱列表（GET方法）；
             - `/recipes/{id}`：获取单个食谱（GET）、更新单个食谱（PUT）或删除食谱（DELETE）。
 
-            注意：**在 Django 路由定义中不包括 HTTP 方法，具体的 HTTP 方法可以在视图中读取并判断**。
+
+            ::: warning
+            **注意**
+
+            在 Django 路由定义中不包括 HTTP 方法，具体的 HTTP 方法可以在视图中读取并判断。
+            :::
       - file: api/api/urls.py
         display: true
         explain:
@@ -460,7 +465,7 @@ steps:
       - file: client/pages/recipes/index.vue
         display: true
         explain:
-          pre: "### 了解 Nuxt 的路由功能\n\n在实现第二个页面之前，我们有必要先了解一下 Nuxt 的路由功能——通过 pages 目录下的文档结构，就可以自动生成 vue-router 的路由器配置！\n\n例如我们这样安排 pages 下面的目录结构\U0001F447：\n\n```text\npages\n├── README.md\n├── index.vue\n└── recipes\n    ├── _id\n    │   ├── edit.vue\n    │   └── index.vue\n    ├── add.vue\n    └── index.vue\n```\n\n`_id` 目录（或者其他以单下划线开头的目录或 .vue 文件）被称作是**动态路由**（Dynamic Routing），可以接受参数作为 URL 的一部分。上面的 pages 目录自动生成下面的 `router`：\n\n```js\nrouter: {\n  routes: [\n    {\n      name: 'index',\n      path: '/',\n      component: 'pages/index.vue'\n    },\n    {\n      name: 'recipes',\n      path: '/recipes',\n      component: 'pages/recipes/index.vue'\n    },\n    {\n      name: 'recipes-add',\n      path: '/recipes/add',\n      component: 'pages/recipes/add.vue'\n    },\n    {\n      name: 'recipes-id',\n      path: '/recipes/:id?',\n      component: 'pages/recipes/_id/index.vue'\n    },\n    {\n      name: 'recipes-id-edit',\n      path: '/recipes/:id?/edit',\n      component: 'pages/recipes/_id/edit.vue'\n    }\n  ]\n}\n```\n\n如果想要更深入地了解 Nuxt 的路由功能，请参考[官方文档](https://nuxtjs.org/guide/routing)。\n\n### 实现食谱列表页面\n\n创建食谱列表页面 pages/recipes/index.vue（先使用假数据填充），代码如下："
+          pre: "### 了解 Nuxt 的路由功能\n\n在实现第二个页面之前，我们有必要先了解一下 Nuxt 的路由功能——通过 pages 目录下的文档结构，就可以自动生成 vue-router 的路由器配置！\n\n例如我们这样安排 pages 下面的目录结构\U0001F447：\n\n```text\npages\n├── README.md\n├── index.vue\n└── recipes\n    ├── _id\n    │   ├── edit.vue\n    │   └── index.vue\n    ├── add.vue\n    └── index.vue\n```\n\n`_id` 目录（或者其他以单下划线开头的目录或 .vue 文件）被称作是**动态路由**（Dynamic Routing），可以接受参数作为 URL 的一部分。上面的 pages 目录自动生成下面的 `router`：\n\n```js\nrouter: {\n  routes: [\n    {\n      name: 'index',\n      path: '/',\n      component: 'pages/index.vue'\n    },\n    {\n      name: 'recipes',\n      path: '/recipes',\n      component: 'pages/recipes/index.vue'\n    },\n    {\n      name: 'recipes-add',\n      path: '/recipes/add',\n      component: 'pages/recipes/add.vue'\n    },\n    {\n      name: 'recipes-id',\n      path: '/recipes/:id?',\n      component: 'pages/recipes/_id/index.vue'\n    },\n    {\n      name: 'recipes-id-edit',\n      path: '/recipes/:id?/edit',\n      component: 'pages/recipes/_id/edit.vue'\n    }\n  ]\n}\n```\n\n\n::: info\n**提示**\n\n如果想要更深入地了解 Nuxt 的路由功能，请参考[官方文档](https://nuxtjs.org/guide/routing)。\n:::\n\n### 实现食谱列表页面\n\n创建食谱列表页面 pages/recipes/index.vue（先使用假数据填充），代码如下："
           post: ''
       - file: client/static/images/food-1.jpeg
         display: false
@@ -488,9 +493,17 @@ steps:
 
             首先我们要配置一下 Django 服务器，使前端能够访问其静态文件。调整 api/api/urls.py 文件如下：
           post: >-
-            需要注意的是，这样配置静态文件路由仅应当在开发环境下使用。在生产环境下（settings.py 中的 `DEBUG` 设为
-            `False` 时），静态文件路由将自动生效（因为 Django 并不适合作为静态文件服务器，应该选用类似 Nginx
+
+            ::: warning
+
+            **注意**
+
+
+            这样配置静态文件路由的方式仅应当在**开发环境**下使用。在生产环境下（settings.py 中的 `DEBUG` 设为
+            `False` 时），静态文件路由将自动失效（因为 Django 并不适合作为静态文件服务器，应该选用类似 Nginx
             之类的服务器，在后续教程中我们将更深入地讨论）。
+
+            :::
       - file: client/nuxt.config.js
         display: true
         explain:
