@@ -20,7 +20,6 @@ splits:
     start: c64b3b6
     end: 63f7ab0
     id: 0818be0
-    cover: tuture-assets/add-data-in-admin.jpg
   - name: Django + Nuxt 实现美食分享网站（二）
     description: >-
       在本教程的上一部分中，我们分别用 Django 和 Nuxt
@@ -28,7 +27,6 @@ splits:
     start: 60a60d7
     end: 04edf4c
     id: 425a3a9
-    cover: tuture-assets/add-recipe.jpg
 steps:
   - name: 项目初始化
     commit: c64b3b6
