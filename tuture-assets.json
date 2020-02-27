@@ -1,0 +1,50 @@
+[
+  {
+    "localPath": ".tuture/assets/django-admin.png",
+    "hostingUri": "https://imgkr.cn-bj.ufileos.com/6c29bd5b-e69f-4a68-9d1f-370b6b1411b0.png"
+  },
+  {
+    "localPath": ".tuture/assets/demo.gif",
+    "hostingUri": "https://imgkr.cn-bj.ufileos.com/4dd9ef8f-ec25-4473-8a78-b52d09ae77fa.gif"
+  },
+  {
+    "localPath": ".tuture/assets/image.png",
+    "hostingUri": "https://imgkr.cn-bj.ufileos.com/a0af7fa1-89f7-4fc2-a6c2-e59c271ce2a4.png"
+  },
+  {
+    "localPath": ".tuture/assets/image-f3d22507493bf44a.png",
+    "hostingUri": "https://imgkr.cn-bj.ufileos.com/11191bd7-3e76-48cf-913b-5b3f01153c53.png"
+  },
+  {
+    "localPath": ".tuture/assets/index-page.jpg",
+    "hostingUri": "https://imgkr.cn-bj.ufileos.com/3fefed5b-2de6-447e-87c4-15d5b2c03339.jpg"
+  },
+  {
+    "localPath": ".tuture/assets/create-nuxt-app.jpg",
+    "hostingUri": "https://imgkr.cn-bj.ufileos.com/15ae6fd9-ad36-4f9e-918a-eba5f4d4d721.jpg"
+  },
+  {
+    "localPath": ".tuture/assets/recipe-list-fake.jpg",
+    "hostingUri": "https://imgkr.cn-bj.ufileos.com/ff166f67-a866-4bf7-b77d-9aae27e6f956.jpg"
+  },
+  {
+    "localPath": ".tuture/assets/add-data-in-admin.jpg",
+    "hostingUri": "https://imgkr.cn-bj.ufileos.com/e16bbd8f-3ffe-4831-8ace-cbd3c1a549b7.jpg"
+  },
+  {
+    "localPath": ".tuture/assets/recipe-list.jpg",
+    "hostingUri": "https://imgkr.cn-bj.ufileos.com/4e799b10-0f12-4d81-a58e-5a75afa0750c.jpg"
+  },
+  {
+    "localPath": ".tuture/assets/recipe-detail.jpg",
+    "hostingUri": "https://imgkr.cn-bj.ufileos.com/fc7103da-864c-4e43-8a91-de0f450a63b8.jpg"
+  },
+  {
+    "localPath": ".tuture/assets/add-recipe.jpg",
+    "hostingUri": "https://imgkr.cn-bj.ufileos.com/10c4b3be-6aa1-445e-87b8-69741a12d250.jpg"
+  },
+  {
+    "localPath": ".tuture/assets/WX20200224-164405@2x.png",
+    "hostingUri": "https://imgkr.cn-bj.ufileos.com/49022ce7-3a5f-457b-bb72-25a662bef646.png"
+  }
+]
