@@ -1,5 +1,13 @@
 [
   {
+    "localPath": ".tuture/assets/cover-1.jpg",
+    "hostingUri": "https://imgkr.cn-bj.ufileos.com/fbc20222-8273-4e5f-88a1-861e91418b6d.jpg"
+  },
+  {
+    "localPath": ".tuture/assets/cover-2.jpg",
+    "hostingUri": "https://imgkr.cn-bj.ufileos.com/f5ae8b83-5c13-4960-bfcc-253a499a3bc1.jpg"
+  },
+  {
     "localPath": ".tuture/assets/django-admin.png",
     "hostingUri": "https://imgkr.cn-bj.ufileos.com/6c29bd5b-e69f-4a68-9d1f-370b6b1411b0.png"
   },
