@@ -1,58 +1,62 @@
 [
   {
     "localPath": ".tuture/assets/cover-1.jpg",
-    "hostingUri": "https://imgkr.cn-bj.ufileos.com/fbc20222-8273-4e5f-88a1-861e91418b6d.jpg"
+    "hostingUri": "https://static.tuture.co/c/b9b4d831629e9a7df36131b1661569eb/cover-1.jpg"
   },
   {
     "localPath": ".tuture/assets/cover-2.jpg",
-    "hostingUri": "https://imgkr.cn-bj.ufileos.com/f5ae8b83-5c13-4960-bfcc-253a499a3bc1.jpg"
+    "hostingUri": "https://static.tuture.co/c/b9b4d831629e9a7df36131b1661569eb/cover-2.jpg"
   },
   {
     "localPath": ".tuture/assets/django-admin.png",
-    "hostingUri": "https://imgkr.cn-bj.ufileos.com/6c29bd5b-e69f-4a68-9d1f-370b6b1411b0.png"
+    "hostingUri": "https://static.tuture.co/c/b9b4d831629e9a7df36131b1661569eb/django-admin.png"
   },
   {
     "localPath": ".tuture/assets/demo.gif",
-    "hostingUri": "https://imgkr.cn-bj.ufileos.com/4dd9ef8f-ec25-4473-8a78-b52d09ae77fa.gif"
+    "hostingUri": "https://static.tuture.co/c/b9b4d831629e9a7df36131b1661569eb/demo.gif"
   },
   {
     "localPath": ".tuture/assets/image.png",
-    "hostingUri": "https://imgkr.cn-bj.ufileos.com/a0af7fa1-89f7-4fc2-a6c2-e59c271ce2a4.png"
+    "hostingUri": "https://static.tuture.co/c/b9b4d831629e9a7df36131b1661569eb/image.png"
   },
   {
     "localPath": ".tuture/assets/image-f3d22507493bf44a.png",
-    "hostingUri": "https://imgkr.cn-bj.ufileos.com/11191bd7-3e76-48cf-913b-5b3f01153c53.png"
+    "hostingUri": "https://static.tuture.co/c/b9b4d831629e9a7df36131b1661569eb/image-f3d22507493bf44a.png"
   },
   {
     "localPath": ".tuture/assets/index-page.jpg",
-    "hostingUri": "https://imgkr.cn-bj.ufileos.com/3fefed5b-2de6-447e-87c4-15d5b2c03339.jpg"
+    "hostingUri": "https://static.tuture.co/c/b9b4d831629e9a7df36131b1661569eb/index-page.jpg"
   },
   {
     "localPath": ".tuture/assets/create-nuxt-app.jpg",
-    "hostingUri": "https://imgkr.cn-bj.ufileos.com/15ae6fd9-ad36-4f9e-918a-eba5f4d4d721.jpg"
+    "hostingUri": "https://static.tuture.co/c/b9b4d831629e9a7df36131b1661569eb/create-nuxt-app.jpg"
   },
   {
     "localPath": ".tuture/assets/recipe-list-fake.jpg",
-    "hostingUri": "https://imgkr.cn-bj.ufileos.com/ff166f67-a866-4bf7-b77d-9aae27e6f956.jpg"
+    "hostingUri": "https://static.tuture.co/c/b9b4d831629e9a7df36131b1661569eb/recipe-list-fake.jpg"
   },
   {
     "localPath": ".tuture/assets/add-data-in-admin.jpg",
-    "hostingUri": "https://imgkr.cn-bj.ufileos.com/e16bbd8f-3ffe-4831-8ace-cbd3c1a549b7.jpg"
+    "hostingUri": "https://static.tuture.co/c/b9b4d831629e9a7df36131b1661569eb/add-data-in-admin.jpg"
   },
   {
     "localPath": ".tuture/assets/recipe-list.jpg",
-    "hostingUri": "https://imgkr.cn-bj.ufileos.com/4e799b10-0f12-4d81-a58e-5a75afa0750c.jpg"
+    "hostingUri": "https://static.tuture.co/c/b9b4d831629e9a7df36131b1661569eb/recipe-list.jpg"
   },
   {
     "localPath": ".tuture/assets/recipe-detail.jpg",
-    "hostingUri": "https://imgkr.cn-bj.ufileos.com/fc7103da-864c-4e43-8a91-de0f450a63b8.jpg"
+    "hostingUri": "https://static.tuture.co/c/b9b4d831629e9a7df36131b1661569eb/recipe-detail.jpg"
   },
   {
     "localPath": ".tuture/assets/add-recipe.jpg",
-    "hostingUri": "https://imgkr.cn-bj.ufileos.com/10c4b3be-6aa1-445e-87b8-69741a12d250.jpg"
+    "hostingUri": "https://static.tuture.co/c/b9b4d831629e9a7df36131b1661569eb/add-recipe.jpg"
   },
   {
     "localPath": ".tuture/assets/WX20200224-164405@2x.png",
-    "hostingUri": "https://imgkr.cn-bj.ufileos.com/49022ce7-3a5f-457b-bb72-25a662bef646.png"
+    "hostingUri": "https://static.tuture.co/c/b9b4d831629e9a7df36131b1661569eb/WX20200224-164405@2x.png"
+  },
+  {
+    "localPath": ".tuture/assets/ufs.png",
+    "hostingUri": "https://static.tuture.co/c/b9b4d831629e9a7df36131b1661569eb/ufs.png"
   }
 ]
